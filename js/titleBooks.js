@@ -21,18 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((err) => console.log(err))
 })
 
+
+let min = 15;
+let max = 150;
+let numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(numeroAleatorio);
+
  function renderizarTitulo (items) {
       const container = document.getElementById('titulo-container');
-      items.results.forEach((item) => {
+      items.results.forEach((item, index) => {
         const divTitulos = document.createElement('div');
      
         divTitulos.innerHTML = `
          <div class="titulo-caixa">
-             <img src="./img/the-woman.png" width="222px" height="300">
+             <img class="titulo-img" src="./img/img${index}.png" width="222px" height="300">
           <div>
             <h3 class="title">${item.title}</h3>
-            <h3 class="title">${item.author}</h3>
-            <h3 class="title">${item.price}</h3>
+            <h3 class="author">${item.author}</h3>
+            <h3 class="title">R$ ${numeroAleatorio}</h3>
           </div>
         </div>
        `;
@@ -44,12 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
