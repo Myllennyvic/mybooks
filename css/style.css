@@ -14,6 +14,7 @@
 
 body{
     font-family: "League Spartan", sans-serif;
+    background-color: #dbdbdb;
 }
 
 header{
@@ -29,6 +30,7 @@ nav {
     margin-left: 0;
     padding: 30px;
     text-align: right;
+    padding-left: 30px;
 }
 
 nav ul {
@@ -37,13 +39,44 @@ nav ul {
 
 nav ul li {
     display: inline;
-    padding-left: 10px;
+    padding-left: 30px;
 }
 
 a {
     text-decoration: none;
     color: var(--white);
-    font-size: 20px;
+    font-size: 25px;
+}
+
+.img{
+  padding-left: 10px;
+}
+
+#divBusca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:solid 1px;
+  border-radius:15px;
+  width:300px; 
+}
+
+.divBusca input {
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.divBusca button {
+  border: none;
+  background: none;
+  color: var(--white);
+  padding-left: 10px;
+}
+
+.divBusca{
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (min-width: 295px){
@@ -59,12 +92,18 @@ a {
     }
 }
 
+@media screen and (max-width: 388px){
+     .form {
+      display: block;
+     }
+}
+
 
 * {box-sizing:border-box}
 
 .slideshow-container {
-  padding: 20px;
-  max-width: 1000px;
+  padding: 30px;
+  max-width: 970px;
   position: relative;
   margin: auto;
 }
@@ -73,14 +112,14 @@ a {
   display: none;
 }
 
-.prev, .next {
+.prev {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -89,13 +128,25 @@ a {
 }
 
 .next {
-  right: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  right: 30px;
   border-radius: 3px 0 0 3px;
 }
 
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: var(--orange);
 }
 
 .text {
@@ -130,4 +181,118 @@ a {
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@media screen and (max-width: 983px){
+   .mySlidesfade{
+      display: block;
+   }
+}
+@media screen and (max-width: 592px){
+  .next {
+    display: block;
+ }
+}
+
+.titulo-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 200px;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.title {
+  padding: 10px;
+  word-wrap: break-word;
+  font-size: 16px;
+}
+
+.author {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 25px;
+  text-align: left;
+  padding-left: 12%;
+  color: var(--orange);
+}
+
+.titulo {
+  height: 510px;
+  border: 1px solid black;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.673);
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+}
+
+h3 {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.titulo-img {
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  padding-right: 10%;
+}
+
+.form-box{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content:right ;
+  padding-right: 10%;
+}
+
+.form-login{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 40%;
+  gap: 0.6rem;
+  color: var(--orange);
+}
+
+.form-login label{
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+
+.form-login input{
+  font-size: 1.1rem;
+  height: 40px;
+  border-radius: 8px;
+  padding-left: .4rem;
+  border: 1px solid var(--orange);
+}
+
+.form-login .btn{
+  background-color: var(--orange);
+  border: NONE ;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  height: 30px;
+  color: var(--white);
+} 
+
+h1 {
+  color: var(--orange);
+}
+
+footer{
+  background-color: var(--orange);
+  text-align: center;
+  color: #fff;
+  padding: 30px;
 }
